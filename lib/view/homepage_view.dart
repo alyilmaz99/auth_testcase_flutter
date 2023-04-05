@@ -1,11 +1,9 @@
-import 'dart:io';
-
 import 'package:auth_testcase_flutter/core/service/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +13,11 @@ class HomePage extends StatelessWidget {
         title: const Text('Home Page'),
         actions: [
           IconButton(
-              onPressed: () async {
-                await _authService.signOut();
-              },
-              icon: const Icon(Icons.exit_to_app))
+            onPressed: () async {
+              await _authService.signOut();
+            },
+            icon: const Icon(Icons.exit_to_app),
+          ),
         ],
       ),
     );
